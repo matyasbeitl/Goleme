@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1440" />
+  <title>Goleme — Website Builder for Barbers &amp; Hairdressers</title>
+  <meta name="description"
+    content="Goleme builds stunning, bookable websites for barbers and hairdressers — in minutes, not months." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* ─── Fonts ──────────────────────────────────────── */
+    @font-face {
+      font-family: 'ITC Stone Sans II';
+      src: local('ITC Stone Sans II'), local('ITCStoneSansII'), local('ITC Stone Sans'), local('Stone Sans II');
+    }
+
+    @font-face {
+      font-family: 'PerpetualMTPro';
+      src: local('PerpetualMTPro-Regular'), local('PerpetualMTPro'), local('Perpetual MT Pro'), local('Perpetual');
+    }
+
+    /* ─── Reset ─────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #FFFFFF;
+      --ink: #1D1C1B;
+      --yellow: #F5C518;
+      --yellow-dark: #D4A910;
+      --ink-60: rgba(29, 28, 27, 0.60);
+      --ink-30: rgba(29, 28, 27, 0.30);
+      --ink-10: rgba(29, 28, 27, 0.10);
+      --ink-06: rgba(29, 28, 27, 0.06);
+    }
+
+    html,
+    body {
+      width: 1440px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'PerpetualMTPro', 'Perpetual MT Pro', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Headers, Actions and Badges */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .hero__title,
+    .features-content__title,
+    .showcase__title,
+    .cta-section__title,
+    .hdl,
+    .btn,
+    .nav__links a,
+    .logos__label,
+    .logos__item,
+    .pill,
+    .tcard__name,
+    .tcard__role,
+    .footer__links a {
+      font-family: 'ITC Stone Sans II', 'ITC Stone Sans', -apple-system, sans-serif;
+    }
+
+    /* ─── CUSTOM LOGO STYLE ──────────────────────────── */
+    .logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    .nav {
+      width: 1440px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      border-bottom: 1px solid var(--ink-10);
+    }
+
+    .nav__logo {
+      display: block;
+      text-decoration: none;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-60);
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+    }
+
+    .btn--outline {
+      border: 1.5px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn--filled {
+      border: none;
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .btn--filled:hover {
+      background: var(--yellow-dark);
+    }
+
+    /* ─── HERO ────────────────────────────────────────── */
+    .hero-section {
+      width: 1440px;
+      background: var(--yellow);
+      padding: 40px 0 0;
+      position: relative;
+    }
+
+    /* Hero section styled as a white floating island with filleted corners - enlarged to 1320px */
+    .hero {
+      position: relative;
+      width: 1420px;
+      height: 700px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 32px;
+      box-shadow: 0 12px 40px rgba(29, 28, 27, 0.05);
+      overflow: hidden;
+    }
+
+    .hero__left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 660px;
+      height: 700px;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 60px;
+    }
+
+    .hero__eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      margin-bottom: 24px;
+    }
+
+    .hero__title {
+      font-family: 'ITC Stone Sans II', 'ITC Stone Sans', sans-serif;
+      font-size: 68px;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .hero__title em {
+      font-style: italic;
+    }
+
+    .hero__subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--ink-60);
+      max-width: 420px;
+      margin-bottom: 44px;
+    }
+
+    /* Prompt box (gradient border via double background) */
+    .hero__prompt-card {
+      position: relative;
+      border: 2.5px solid transparent;
+      background: linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+        linear-gradient(90deg, #FF5E3A, #C823B3, #4D66FF) border-box;
+      border-radius: 16px;
+      padding: 8px 8px 8px 20px;
+      box-shadow: 0 10px 30px rgba(77, 102, 255, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 480px;
+      margin-bottom: 20px;
+    }
+
+    .hero__prompt-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      color: var(--ink);
+      background: transparent;
+    }
+
+    .hero__prompt-input::placeholder {
+      color: var(--ink-30);
+    }
+
+    .hero__prompt-btn {
+      height: 44px;
+      padding: 0 24px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      background: var(--ink);
+      color: #FFFFFF;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .hero__prompt-btn:hover {
+      opacity: 0.9;
+    }
+
+    .hero__right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 760px;
+      height: 700px;
+      background: #FFFFFF;
+      background-image:
+        linear-gradient(rgba(29, 28, 27, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29, 28, 27, 0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Conversation styling inside the hero right panel */
+    .chat-container {
+      width: 540px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 5;
+      position: relative;
+    }
+
+    .chat-bubble {
+      max-width: 85%;
+      padding: 16px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      line-height: 1.5;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(29, 28, 27, 0.04);
+    }
+
+    .chat-bubble--client {
+      align-self: flex-end;
+      background: var(--ink);
+      color: #FFFFFF;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-bubble--golem {
+      align-self: flex-start;
+      background: #FFFFFF;
+      color: var(--ink);
+      border: 1.5px solid var(--ink-10);
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-bubble--golem::before {
+      content: '✦';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 24px;
+      height: 24px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(245, 197, 24, 0.4);
+    }
+
+    .chat-bubble__preview {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--ink-06);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--ink-10);
+      transition: background 0.2s;
+    }
+
+    .chat-bubble__preview:hover {
+      background: var(--ink-10);
+    }
+
+    /* Floating tool icons in the grid */
+    .chat-icon {
+      position: absolute;
+      font-size: 28px;
+      color: rgba(29, 28, 27, 0.16);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .icon-1 {
+      top: 60px;
+      left: 60px;
+      transform: rotate(-15deg);
+    }
+
+    .icon-2 {
+      bottom: 80px;
+      left: 80px;
+      transform: rotate(20deg);
+    }
+
+    .icon-3 {
+      top: 80px;
+      right: 80px;
+      transform: rotate(45deg);
+    }
+
+    .icon-4 {
+      bottom: 120px;
+      right: 100px;
+      transform: rotate(-30deg);
+    }
+
+    /* ─── LOGOS STRIP ─────────────────────────────────── */
+    .logos {
+      width: 1440px;
+      height: 80px;
+      background: var(--yellow);
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+    }
+
+    .logos__label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(29, 28, 27, 0.5);
+      white-space: nowrap;
+      margin-right: 48px;
+    }
+
+    .logos__items {
+      display: flex;
+      align-items: center;
+      gap: 52px;
+    }
+
+    .logos__item {
+      font-family: 'ITC Stone Sans II', 'ITC Stone Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(29, 28, 27, 0.6);
+    }
+
+    /* ─── FEATURES SECTION ────────────────────────────── */
+    .features-section-wrapper {
+      width: 1440px;
+      background: var(--yellow);
+      padding: 0px 0 20px;
+    }
+
+    /* Features section card styled as a white floating island - enlarged to 1320px */
+    .features-section {
+      width: 1420px;
+      height: 700px;
+      margin: 0 auto;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+      border-radius: 32px;
+      box-shadow: 0 12px 40px rgba(29, 28, 27, 0.05);
+      z-index: 2;
+    }
+
+    .features-menu {
+      width: 400px;
+      padding: 0 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .features-menu__item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 16px;
+      border-radius: 14px;
+      cursor: pointer;
+    }
+
+    .features-menu__item--active {
+      background: var(--ink-06);
+    }
+
+    .features-menu__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--ink-30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .features-menu__item--active .features-menu__icon {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .features-menu__label {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink-60);
+    }
+
+    .features-menu__item--active .features-menu__label {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .features-curve {
+      position: absolute;
+      top: 0;
+      left: 395px;
+      width: 80px;
+      height: 700px;
+      pointer-events: none;
+    }
+
+    .features-content {
+      position: absolute;
+      top: 0;
+      left: 475px;
+      right: 0;
+      height: 700px;
+      padding: 80px 80px 80px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .features-content__card {
+      width: 380px;
+      background: var(--ink-06);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 32px;
+    }
+
+    .features-content__card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .features-content__card-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .features-content__card-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .features-content__card-check {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1.5px solid var(--ink-30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 9px;
+      color: var(--ink-60);
+    }
+
+    .features-content__card-text {
+      height: 10px;
+      border-radius: 4px;
+      background: var(--ink-10);
+    }
+
+    .features-content__title {
+      font-family: 'ITC Stone Sans II', 'ITC Stone Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+      max-width: 380px;
+      margin-bottom: 16px;
+    }
+
+    .features-content__desc {
+      font-size: 14px;
+      color: var(--ink-60);
+      line-height: 1.65;
+      max-width: 360px;
+      margin-bottom: 28px;
+    }
+
+    .features-content__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 44px;
+      padding: 0 20px;
+      background: var(--ink-06);
+      border: 1.5px solid var(--ink-10);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .features-content__cta-arrow {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    /* ─── SHOWCASE SECTION ─────────────────────────────── */
+    .showcase {
+      width: 1440px;
+      padding: 100px 60px 120px;
+      background: var(--bg);
+      border-top: 1px solid var(--ink-10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .showcase__header {
+      width: 1320px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 56px;
+    }
+
+    .showcase__title {
+      font-family: 'ITC Stone Sans II', 'ITC Stone Sans', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.1;
+      max-width: 560px;
+      color: var(--ink);
+    }
+
+    .showcase__title em {
+      font-style: italic;
+    }
+
+    .showcase__sub {
+      font-size: 14px;
+      color: var(--ink-60);
+      max-width: 280px;
+      line-height: 1.6;
+      text-align: right;
+    }
+
+    .showcase__frame {
+      width: 1320px;
+      background: #111110;
+      border-radius: 24px;
+      padding: 16px;
+      position: relative;
+    }
+
+    /* Mosaic grid */
+    .mosaic {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 215px 1fr 1fr 215px;
+      grid-template-rows: 190px 180px 148px;
+      gap: 28px;
+      position: relative;
+    }
+
+    /* Generic tile */
+    .tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Browser chrome bar */
+    .chrome {
+      flex-shrink: 0;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      padding: 0 9px;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    /* Tile body */
+    .body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+    }
+
+    /* Stacked content inside body */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lbl {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .hdl {
+      font-family: 'ITC Stone Sans II', 'ITC Stone Sans', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    /* ── Color themes ── */
+    .dark {
+      background: #1a1918;
+    }
+
+    .dark .chrome {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .dark .dot {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .dark .lbl {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .dark .hdl {
+      color: #fff;
+    }
+
+    .light {
+      background: #F5F3EF;
+    }
+
+    .light .chrome {
+      background: rgba(0, 0, 0, 0.055);
+    }
+
+    .light .dot {
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .light .lbl {
+      color: rgba(29, 28, 27, 0.26);
+    }
+
+    .light .hdl {
+      color: var(--ink);
+    }
+
+    .mid {
+      background: #E4E0D8;
+    }
+
+    .mid .chrome {
+      background: rgba(0, 0, 0, 0.07);
+    }
+
+    .mid .dot {
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .mid .lbl {
+      color: rgba(29, 28, 27, 0.26);
+    }
+
+    .mid .hdl {
+      color: var(--ink);
+    }
+
+    .yell {
+      background: #F5C518;
+    }
+
+    .yell .chrome {
+      background: rgba(0, 0, 0, 0.07);
+    }
+
+    .yell .dot {
+      background: rgba(0, 0, 0, 0.20);
+    }
+
+    .yell .lbl {
+      color: rgba(29, 28, 27, 0.30);
+    }
+
+    .yell .hdl {
+      color: var(--ink);
+    }
+
+    .lavender {
+      background: #D8D3F2;
+    }
+
+    .lavender .chrome {
+      background: rgba(0, 0, 0, 0.055);
+    }
+
+    .lavender .dot {
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .lavender .lbl {
+      color: rgba(42, 26, 122, 0.30);
+    }
+
+    .lavender .hdl {
+      color: #2a1a7a;
+    }
+
+    .sky {
+      background: #C8E8F5;
+    }
+
+    .sky .chrome {
+      background: rgba(0, 0, 0, 0.055);
+    }
+
+    .sky .dot {
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .sky .lbl {
+      color: rgba(10, 58, 92, 0.30);
+    }
+
+    .sky .hdl {
+      color: #0a3a5c;
+    }
+
+    /* Grid positions */
+    .r1c1 {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .r1c2 {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .r1c3 {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .r1c4 {
+      grid-column: 4;
+      grid-row: 1;
+    }
+
+    .r2c1 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .r2c2 {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .r2c3 {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+    .r2c4 {
+      grid-column: 4;
+      grid-row: 2;
+    }
+
+    .r3c1 {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .r3c2 {
+      grid-column: 2;
+      grid-row: 3;
+    }
+
+    .r3c3 {
+      grid-column: 3;
+      grid-row: 3;
+    }
+
+    .r3c4 {
+      grid-column: 4;
+      grid-row: 3;
+    }
+
+    /* Floating pill badge - centered on seam */
+    .pill {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 194px;
+      z-index: 10;
+      height: 48px;
+      padding: 0 24px;
+      background: #fff;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      box-shadow: 0 4px 28px rgba(0, 0, 0, 0.20);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .pill__count {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--yellow);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .pill__text {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .bar {
+      border-radius: 3px;
+    }
+
+    /* ─── TESTIMONIALS ────────────────────────────────── */
+    .testimonials {
+      width: 1440px;
+      padding: 100px 0;
+      background: var(--yellow);
+    }
+
+    .testimonials__grid {
+      column-count: 4;
+      column-gap: 20px;
+      width: 1420px;
+      margin: 0 auto;
+    }
+
+    /* Testimonial cards styled as white cards with rounded corners on yellow divider background */
+    .tcard {
+      background: #FFFFFF;
+      border: none;
+      border-radius: 20px;
+      padding: 24px;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(29, 28, 27, 0.04);
+      width: 100%;
+      box-sizing: border-box;
+      break-inside: avoid;
+      margin-bottom: 16px;
+    }
+
+    .tcard__quote {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    .tcard__name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-60);
+    }
+
+    /* ─── CTA SECTION ─────────────────────────────────── */
+    .cta-section {
+      width: 1440px;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      border-top: 1px solid var(--ink-10);
+      gap: 28px;
+    }
+
+    .cta-section__title {
+      font-family: 'ITC Stone Sans II', 'ITC Stone Sans', sans-serif;
+      font-size: 60px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -1.8px;
+      line-height: 1.08;
+      max-width: 720px;
+    }
+
+    .cta-section__title em {
+      font-style: italic;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    .footer {
+      width: 1440px;
+      padding: 80px 60px;
+      border-top: 1px solid var(--ink-10);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .footer__left {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer__logo {
+      display: block;
+    }
+
+    .footer__copy {
+      font-size: 12px;
+      color: var(--ink-30);
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      list-style: none;
+    }
+
+    .footer__links a {
+      font-size: 13px;
+      color: var(--ink-60);
+      text-decoration: none;
+    }
+
+    .footer__newsletter {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 320px;
+    }
+
+    .footer__newsletter-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .footer__newsletter-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .footer__newsletter-input {
+      flex: 1;
+      height: 40px;
+      padding: 0 16px;
+      border: 1.5px solid var(--ink-30);
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    .footer__newsletter-input::placeholder {
+      color: var(--ink-30);
+    }
+
+    .footer__newsletter-btn {
+      height: 40px;
+      padding: 0 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--ink);
+      color: #FFFFFF;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ NAV ══════════════════════════════════════════════ -->
+  <nav class="nav">
+    <a href="#" class="nav__logo"><img src="logo.png" alt="Goleme Logo" class="logo-img" /></a>
+    <ul class="nav__links">
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Examples</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <div style="display:flex;gap:12px;align-items:center;">
+      <a href="#" class="btn btn--outline">Log in</a>
+      <a href="#" class="btn btn--filled" style="color:var(--ink);">Get started free</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <section class="hero-section">
+    <div class="hero">
+      <div class="hero__left">
+        <h1 class="hero__title">Your salon,<br /><em>online</em> in<br />minutes.</h1>
+        <p class="hero__subtitle">
+          Goleme builds a beautiful, bookable website for your barbershop or hair salon — no code, no designers, no
+          stress.
+        </p>
+        <div class="hero__prompt-card">
+          <input class="hero__prompt-input" type="text"
+            placeholder="Describe your salon (e.g. Modern barbershop in Prague)..." />
+          <a href="#" class="btn btn--filled hero__prompt-btn">Generate website</a>
+        </div>
+      </div>
+      <div class="hero__right">
+        <!-- Floating icons scattered across the grid -->
+        <i class="fa-light fa-scissors chat-icon icon-1"></i>
+        <i class="fa-regular fa-spray-can chat-icon icon-2"></i>
+        <i class="fa-regular fa-calendar-check chat-icon icon-3"></i>
+        <i class="fa-regular fa-comments chat-icon icon-4"></i>
+
+        <!-- Chat Conversation between Client & Golem -->
+        <div class="chat-container">
+          <!-- Message 1: Client -->
+          <div class="chat-bubble chat-bubble--client">
+            Hey Golem, I have a salon that does keratin treatments. Do a website for me.
+          </div>
+
+          <!-- Message 2: Golem -->
+          <div class="chat-bubble chat-bubble--golem">
+            Sure thing! Give me 5 minutes, I'll generate a gorgeous website with pricing and a bookable calendar for
+            your treatments.
+          </div>
+
+          <!-- Message 3: Client -->
+          <div class="chat-bubble chat-bubble--client">
+            Awesome, also add our opening hours and location in Prague.
+          </div>
+
+          <!-- Message 4: Golem -->
+          <div class="chat-bubble chat-bubble--golem">
+            All set! Your website is ready. Click below to view it.
+            <a href="#" class="chat-bubble__preview">
+              <span> Prague Keratin Studio </span>
+              <span style="color:var(--yellow);">View site ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LOGOS STRIP ════════════════════════════════════════ -->
+  <div class="logos">
+    <span class="logos__label">Trusted by salons across Europe</span>
+    <div class="logos__items">
+      <span class="logos__item">Barber&amp;Co</span>
+      <span class="logos__item">HairStudio</span>
+      <span class="logos__item">CutCraft</span>
+      <span class="logos__item">La Maison</span>
+      <span class="logos__item">Klíp Studio</span>
+    </div>
+  </div>
+
+
+  <!-- ══ FEATURES SECTION ═══════════════════════════════════ -->
+  <div class="features-section-wrapper">
+    <section class="features-section">
+      <div class="features-menu">
+        <div class="features-menu__item features-menu__item--active">
+          <div class="features-menu__icon">✦</div>
+          <span class="features-menu__label">Website Builder</span>
+        </div>
+        <div class="features-menu__item">
+          <div class="features-menu__icon">📅</div>
+          <span class="features-menu__label">Online Bookings</span>
+        </div>
+        <div class="features-menu__item">
+          <div class="features-menu__icon">💬</div>
+          <span class="features-menu__label">Client Reminders</span>
+        </div>
+        <div class="features-menu__item">
+          <div class="features-menu__icon">🎨</div>
+          <span class="features-menu__label">Goleme AI tips</span>
+        </div>
+      </div>
+
+      <!-- Curved SVG divider — mirrors the reference design -->
+      <svg class="features-curve" viewBox="0 0 80 700" fill="none" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none">
+        <path d="M40,0 C40,140 10,280 10,350 C10,420 40,560 40,700" stroke="#1D1C1B" stroke-width="1.5"
+          stroke-opacity="0.18" />
+        <path d="M46,0 C46,140 16,280 16,350 C16,420 46,560 46,700" stroke="#1D1C1B" stroke-width="0.8"
+          stroke-opacity="0.08" />
+        <circle cx="10" cy="210" r="8" fill="#1D1C1B" />
+      </svg>
+
+      <div class="features-content">
+        <div class="features-content__card">
+          <div class="features-content__card-title">Website Builder</div>
+          <div class="features-content__card-items">
+            <div class="features-content__card-item">
+              <div class="features-content__card-check">✓</div>
+              <div class="features-content__card-text" style="width:220px;"></div>
+            </div>
+            <div class="features-content__card-item">
+              <div class="features-content__card-check">✓</div>
+              <div class="features-content__card-text" style="width:180px;"></div>
+            </div>
+            <div class="features-content__card-item">
+              <div class="features-content__card-check">✓</div>
+              <div class="features-content__card-text" style="width:200px;"></div>
+            </div>
+          </div>
+        </div>
+        <h3 class="features-content__title">Website builder designed to book more clients and grow your business</h3>
+        <p class="features-content__desc">
+          Pick a template made for barbers and kadernice. Add your services, opening hours — Goleme does the rest.
+        </p>
+        <a href="#" class="features-content__cta">
+          Start building your site
+          <div class="features-content__cta-arrow">↗</div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ══ SHOWCASE ═══════════════════════════════════════════ -->
+  <section class="showcase">
+
+
+    <div class="showcase__frame">
+      <div class="mosaic">
+
+        <!-- ROW 1 -->
+        <!-- R1C1 · Sky blue · plane/aviation style -->
+        <div class="tile sky r1c1">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div class="lbl">Aviation Style</div>
+              <div style="font-size: 24px;">✈</div>
+              <div style="width:70px;height:5px;background:rgba(10,58,92,0.12);" class="bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R1C2 · Dark · TRONA styled mockup -->
+        <div class="tile dark r1c2">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div class="hdl" style="font-size:32px;letter-spacing:-1.5px;">TRONA</div>
+              <div style="width:110px;height:5px;background:rgba(255,255,255,0.06);" class="bar"></div>
+              <div style="width:70px;height:5px;background:rgba(255,255,255,0.04);" class="bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R1C3 · Dark · Dumbbell/Gym mockup -->
+        <div class="tile dark r1c3">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div class="hdl" style="font-size:14px;color:rgba(255,255,255,0.8);">(Dumbbell AI) Gym</div>
+              <div style="display:flex;align-items:center;gap:4px;margin-top:4px;">
+                <div style="width:8px;height:24px;background:rgba(255,255,255,0.2);" class="bar"></div>
+                <div style="width:24px;height:6px;background:rgba(255,255,255,0.4);" class="bar"></div>
+                <div style="width:8px;height:24px;background:rgba(255,255,255,0.2);" class="bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R1C4 · Light · Plan. Manage. Build. -->
+        <div class="tile light r1c4">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div class="hdl" style="font-size:13px;text-align:left;max-width:130px;color:var(--ink);">Plan. Manage.
+                Build.</div>
+              <div style="width:100px;height:44px;background:rgba(29,28,27,0.06);border-radius:4px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <!-- R2C1 · Light · Phone / card loyalty mock -->
+        <div class="tile light r2c1">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div
+                style="width:48px;height:72px;background:rgba(29,28,27,0.06);border:1px solid rgba(29,28,27,0.12);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4px;">
+                <div style="width:36px;height:22px;background:var(--ink);border-radius:2px;"></div>
+                <div style="width:28px;height:3px;background:rgba(29,28,27,0.2);margin-top:6px;" class="bar"></div>
+              </div>
+              <div class="lbl" style="font-size:8px;">Loyalty Card</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R2C2 · Lavender · RE tile -->
+        <div class="tile lavender r2c2">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div class="hdl" style="font-size:38px;letter-spacing:-2px;color:#2a1a7a;">RE</div>
+              <div class="lbl" style="font-size:8px;color:rgba(42,26,122,0.40);">Creative Hub</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R2C3 · Light · Prisjakt style yellow highlight -->
+        <div class="tile light r2c3">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div class="hdl" style="font-size:12px;color:var(--ink);">Buy in groups.<br /><span
+                  style="background:var(--yellow);padding:0 4px;border-radius:2px;">Than Prisjakt.</span></div>
+              <div style="width:80px;height:5px;background:rgba(29,28,27,0.08);" class="bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R2C4 · Light · Blue sky / crane mockup -->
+        <div class="tile light r2c4">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body"
+            style="background:#E2F3F9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+            <div class="hdl" style="font-size:11px;color:#0a3a5c;">Elevate perspective</div>
+            <div
+              style="width:80px;height:32px;background:rgba(10,58,92,0.08);border-radius:4px;position:relative;overflow:hidden;">
+              <div
+                style="width:90px;height:2px;background:var(--yellow);transform:rotate(15deg);position:absolute;top:15px;left:-5px;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <!-- R3C1 · Light · Construction crane base -->
+        <div class="tile light r3c1">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body" style="background:#EBF5FA;display:flex;align-items:flex-end;justify-content:center;">
+            <div
+              style="width:40px;height:80px;border-left:2px solid var(--yellow);border-right:2px solid var(--yellow);position:relative;">
+              <div style="width:100%;height:2px;background:var(--yellow);position:absolute;top:20px;"></div>
+              <div style="width:100%;height:2px;background:var(--yellow);position:absolute;top:40px;"></div>
+              <div style="width:100%;height:2px;background:var(--yellow);position:absolute;top:60px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R3C2 · Light · Find people and funding -->
+        <div class="tile light r3c2">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack" style="align-items:flex-start;">
+              <div class="hdl" style="font-size:11px;text-align:left;color:var(--ink);">FIND PEOPLE AND FUNDING</div>
+              <div style="display:flex;align-items:center;gap:6px;width:100%;">
+                <div style="flex:1;height:18px;background:rgba(29,28,27,0.07);border-radius:3px;"></div>
+                <div style="width:24px;height:24px;background:rgba(29,28,27,0.1);border-radius:50%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R3C3 · Dark · webflow development ghost -->
+        <div class="tile dark r3c3">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div class="lbl" style="font-size:8px;color:rgba(255,255,255,0.4);">YOUR GO-TO</div>
+              <div class="hdl" style="font-size:12px;color:#fff;">webflow development ghost</div>
+              <div style="width:46px;height:16px;background:#00d285;border-radius:8px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- R3C4 · Mid · Saunas for life -->
+        <div class="tile mid r3c4">
+          <div class="chrome">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="body">
+            <div class="stack">
+              <div class="hdl" style="font-size:13px;font-style:italic;color:var(--ink);">Elegant. Superior.<br />Saunas
+                for life.</div>
+              <div style="width:60px;height:5px;background:rgba(29,28,27,0.10);" class="bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FLOATING PILL -->
+        <div class="pill">
+          <span class="pill__count">500k+</span>
+          <span class="pill__text">Websites built with Goleme</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ═══════════════════════════════════════ -->
+  <section class="testimonials">
+    <div class="testimonials__grid">
+      <!-- Card 1 -->
+      <div class="tcard">
+        <p class="tcard__quote">"Goleme understood exactly what a kadernictví needs. The templates look professional and clients always compliment the site."</p>
+        <div class="tcard__name">Lucie Novotná</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="tcard">
+        <p class="tcard__quote">"I set up my barbershop website in one afternoon. Now my clients book online and I spend less time answering calls while working."</p>
+        <div class="tcard__name">Tomáš Kovář</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="tcard">
+        <p class="tcard__quote">"We moved all 4 of our salon locations to Goleme. The automated reminders reduced our no-show rate to zero, and the booking system is dead simple for customers to use on their phones."</p>
+        <div class="tcard__name">Adam Marek</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="tcard">
+        <p class="tcard__quote">"Honestly a game changer. The AI generated a gorgeous page that fits our beauty studio brand perfectly. Very easy to update our services and pricing."</p>
+        <div class="tcard__name">Elena Růžičková</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="tcard">
+        <p class="tcard__quote">"Highly recommend. Increased our online bookings by 40% in just two weeks of launching."</p>
+        <div class="tcard__name">David Svoboda</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="tcard">
+        <p class="tcard__quote">"As a mobile makeup artist, I needed something quick and elegant. Goleme let me build a bookings portal that clients compliantly pay deposit fees through before booking a slot. Perfect."</p>
+        <div class="tcard__name">Marie Blahová</div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="tcard">
+        <p class="tcard__quote">"No-brainer tool. The automated SMS reminders pay for the service itself because clients don't forget their appointments anymore."</p>
+        <div class="tcard__name">Oliver Jánský</div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="tcard">
+        <p class="tcard__quote">"I created my portfolio and bookings page in 10 minutes. Love the sleek templates!"</p>
+        <div class="tcard__name">Anna Poláková</div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ══ FOOTER ═════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__left">
+      <a href="#" class="footer__logo"><img src="logo.png" alt="Goleme Logo" class="logo-img" /></a>
+      <span class="footer__copy">© 2026 Goleme s.r.o.</span>
+    </div>
+
+    <ul class="footer__links">
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="footer__newsletter">
+      <span class="footer__newsletter-label">Newsletter</span>
+      <div class="footer__newsletter-row">
+        <input class="footer__newsletter-input" type="email" placeholder="your@email.com" />
+        <button class="footer__newsletter-btn">Subscribe</button>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
