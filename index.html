@@ -88,13 +88,20 @@
 
     /* ─── NAV ─────────────────────────────────────────── */
     .nav {
-      width: 1440px;
+      width: 1420px;
       height: 72px;
+      margin: 0 auto 40px;
+      background: #FFFFFF;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(29, 28, 27, 0.04);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 60px;
-      border-bottom: 1px solid var(--ink-10);
+      padding: 0 32px;
+      border: 1px solid var(--ink-06);
+      box-sizing: border-box;
+      z-index: 10;
+      position: relative;
     }
 
     .nav__logo {
@@ -116,13 +123,32 @@
       text-decoration: none;
     }
 
+    .nav__icon-btn {
+      color: var(--ink);
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav__icon-btn:hover {
+      background: rgba(29, 28, 27, 0.05);
+      color: var(--ink);
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       height: 40px;
       padding: 0 22px;
-      border-radius: 999px;
+      border-radius: 16px;
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
@@ -137,20 +163,21 @@
     }
 
     .btn--filled {
-      border: none;
-      background: var(--yellow);
+      border: 2px solid transparent;
+      background: linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+        linear-gradient(90deg, #FFB800, #FF5E00) border-box;
       color: var(--ink);
     }
 
     .btn--filled:hover {
-      background: var(--yellow-dark);
+      opacity: 0.85;
     }
 
     /* ─── HERO ────────────────────────────────────────── */
     .hero-section {
       width: 1440px;
       background: var(--yellow);
-      padding: 40px 0 0;
+      padding: 8px 0 0;
       position: relative;
     }
 
@@ -163,7 +190,7 @@
       background: #FFFFFF;
       border-radius: 32px;
       box-shadow: 0 12px 40px rgba(29, 28, 27, 0.05);
-      overflow: hidden;
+      overflow: visible;
     }
 
     .hero__left {
@@ -216,10 +243,10 @@
       position: relative;
       border: 2.5px solid transparent;
       background: linear-gradient(#FFFFFF, #FFFFFF) padding-box,
-        linear-gradient(90deg, #FF5E3A, #C823B3, #4D66FF) border-box;
+        linear-gradient(90deg, #FFB800, #FF5E00) border-box;
       border-radius: 16px;
       padding: 8px 8px 8px 20px;
-      box-shadow: 0 10px 30px rgba(77, 102, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(255, 94, 0, 0.08);
       display: flex;
       align-items: center;
       gap: 12px;
@@ -274,10 +301,12 @@
         linear-gradient(rgba(29, 28, 27, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(29, 28, 27, 0.05) 1px, transparent 1px);
       background-size: 24px 24px;
-      overflow: hidden;
+      overflow: visible;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-top-right-radius: 32px;
+      border-bottom-right-radius: 32px;
     }
 
     /* Conversation styling inside the hero right panel */
@@ -355,10 +384,35 @@
     /* Floating tool icons in the grid */
     .chat-icon {
       position: absolute;
-      font-size: 28px;
-      color: rgba(29, 28, 27, 0.16);
+      font-size: 42px;
+      color: #1d1c1b;
+      opacity: 0.95;
       pointer-events: none;
       z-index: 2;
+    }
+
+    /* Grid clip decoration */
+    .grid-clip {
+      position: absolute;
+      width: 70px;
+      height: auto;
+      z-index: 8;
+      pointer-events: none;
+    }
+
+    .grid-clip--top-left {
+      top: -25px;
+      left: -40px;
+      transform: rotate(-50deg);
+      z-index: 8;
+
+    }
+
+    .grid-clip--bottom-right {
+      bottom: -20px;
+      right: -30px;
+      transform: rotate(130deg);
+      z-index: 10;
     }
 
     .icon-1 {
@@ -389,7 +443,7 @@
     .logos {
       width: 1440px;
       height: 80px;
-      background: var(--yellow);
+      background: transparent;
       display: flex;
       align-items: center;
       padding: 0 80px;
@@ -421,8 +475,8 @@
     /* ─── FEATURES SECTION ────────────────────────────── */
     .features-section-wrapper {
       width: 1440px;
-      background: var(--yellow);
-      padding: 0px 0 20px;
+      background: transparent;
+      padding: 0px 0 40px;
     }
 
     /* Features section card styled as a white floating island - enlarged to 1320px */
@@ -582,9 +636,10 @@
       gap: 10px;
       height: 44px;
       padding: 0 20px;
-      background: var(--ink-06);
-      border: 1.5px solid var(--ink-10);
-      border-radius: 999px;
+      border: 2px solid transparent;
+      background: linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+                  linear-gradient(90deg, #FFB800, #FF5E00) border-box;
+      border-radius: 16px;
       font-size: 13px;
       font-weight: 600;
       color: var(--ink);
@@ -608,7 +663,7 @@
     /* ─── SHOWCASE SECTION ─────────────────────────────── */
     .showcase {
       width: 1440px;
-      padding: 100px 60px 120px;
+      padding: 100px 0 120px;
       background: var(--bg);
       border-top: 1px solid var(--ink-10);
       display: flex;
@@ -617,7 +672,7 @@
     }
 
     .showcase__header {
-      width: 1320px;
+      width: 1420px;
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
@@ -647,20 +702,22 @@
     }
 
     .showcase__frame {
-      width: 1320px;
+      width: 1420px;
       background: #111110;
-      border-radius: 24px;
-      padding: 16px;
+      border-radius: 32px;
+      padding: 36px 24px;
       position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     /* Mosaic grid */
     .mosaic {
       width: 100%;
       display: grid;
-      grid-template-columns: 215px 1fr 1fr 215px;
-      grid-template-rows: 190px 180px 148px;
-      gap: 28px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 200px);
+      gap: 44px;
       position: relative;
     }
 
@@ -843,65 +900,77 @@
       color: #0a3a5c;
     }
 
-    /* Grid positions */
+    /* Grid positions and horizontal staggered sliding offsets */
     .r1c1 {
       grid-column: 1;
       grid-row: 1;
+      transform: translateX(-40px);
     }
 
     .r1c2 {
       grid-column: 2;
       grid-row: 1;
+      transform: translateX(-40px);
     }
 
     .r1c3 {
       grid-column: 3;
       grid-row: 1;
+      transform: translateX(-40px);
     }
 
     .r1c4 {
       grid-column: 4;
       grid-row: 1;
+      transform: translateX(-40px);
     }
 
     .r2c1 {
       grid-column: 1;
       grid-row: 2;
+      transform: translateX(40px);
     }
 
     .r2c2 {
       grid-column: 2;
       grid-row: 2;
+      transform: translateX(40px);
     }
 
     .r2c3 {
       grid-column: 3;
       grid-row: 2;
+      transform: translateX(40px);
     }
 
     .r2c4 {
       grid-column: 4;
       grid-row: 2;
+      transform: translateX(40px);
     }
 
     .r3c1 {
       grid-column: 1;
       grid-row: 3;
+      transform: translateX(-20px);
     }
 
     .r3c2 {
       grid-column: 2;
       grid-row: 3;
+      transform: translateX(-20px);
     }
 
     .r3c3 {
       grid-column: 3;
       grid-row: 3;
+      transform: translateX(-20px);
     }
 
     .r3c4 {
       grid-column: 4;
       grid-row: 3;
+      transform: translateX(-20px);
     }
 
     /* Floating pill badge - centered on seam */
@@ -909,12 +978,12 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: 194px;
+      top: 190px;
       z-index: 10;
       height: 48px;
       padding: 0 24px;
       background: #fff;
-      border-radius: 999px;
+      border-radius: 14px;
       border: 1px solid rgba(0, 0, 0, 0.09);
       box-shadow: 0 4px 28px rgba(0, 0, 0, 0.20);
       display: flex;
@@ -941,16 +1010,73 @@
       border-radius: 3px;
     }
 
+    /* ─── TRANSITION CTA ──────────────────────────────── */
+    .transition-cta {
+      width: 1440px;
+      margin: 0 auto;
+      padding: 80px 0 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg);
+      text-align: center;
+    }
+
+    .transition-cta__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .transition-cta__quote {
+      font-family: 'PerpetualMTPro', 'Perpetual MT Pro', Georgia, serif;
+      font-size: 26px;
+      color: rgba(29, 28, 27, 0.45);
+      margin: 0 0 4px;
+      font-style: italic;
+      letter-spacing: -0.2px;
+    }
+
+    .transition-cta__heading {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+
+    .transition-cta__lead {
+      font-family: 'ITC Stone Sans II', sans-serif;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -2px;
+    }
+
+    .transition-cta__accent {
+      font-family: 'ITC Stone Sans II', sans-serif;
+      font-size: 160px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #FFB800, #FF5E00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 15px 45px rgba(255, 94, 0, 0.3));
+      letter-spacing: -6px;
+      margin-top: 10px;
+    }
+
     /* ─── TESTIMONIALS ────────────────────────────────── */
     .testimonials {
       width: 1440px;
-      padding: 100px 0;
+      padding: 10px 0;
       background: var(--yellow);
     }
 
     .testimonials__grid {
       column-count: 4;
-      column-gap: 20px;
+      column-gap: 12px;
       width: 1420px;
       margin: 0 auto;
     }
@@ -959,29 +1085,60 @@
     .tcard {
       background: #FFFFFF;
       border: none;
-      border-radius: 20px;
-      padding: 24px;
+      border-radius: 16px;
+      padding: 18px 20px;
       display: inline-flex;
       flex-direction: column;
-      gap: 12px;
-      box-shadow: 0 8px 24px rgba(29, 28, 27, 0.04);
+      gap: 14px;
+      box-shadow: 0 4px 20px rgba(29, 28, 27, 0.03);
       width: 100%;
       box-sizing: border-box;
       break-inside: avoid;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .tcard__quote {
       font-size: 14px;
       line-height: 1.6;
       color: var(--ink);
-      font-style: italic;
+      margin: 0;
+    }
+
+    .tcard__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .tcard__author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .tcard__name {
       font-size: 13px;
       font-weight: 700;
+      color: var(--ink);
+    }
+
+    .tcard__role {
+      font-size: 12px;
       color: var(--ink-60);
+    }
+
+    .tcard__avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     /* ─── CTA SECTION ─────────────────────────────────── */
@@ -1014,54 +1171,159 @@
     /* ─── FOOTER ──────────────────────────────────────── */
     .footer {
       width: 1440px;
-      padding: 80px 60px;
-      border-top: 1px solid var(--ink-10);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-
-    .footer__left {
+      background: #FFFFFF;
+      padding: 100px 80px 60px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      color: var(--ink);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
 
-    .footer__logo {
-      display: block;
+    .footer__huge-text {
+      font-family: 'ITC Stone Sans II', sans-serif;
+      font-size: 260px;
+      font-weight: 800;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(29, 28, 27, 0.08);
+      letter-spacing: -10px;
+      pointer-events: none;
+      position: absolute;
+      bottom: 20px;
+      left: 60px;
+      z-index: 1;
     }
 
-    .footer__copy {
-      font-size: 12px;
-      color: var(--ink-30);
+    .footer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
     }
 
-    .footer__links {
+    .footer__brand-col {
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer__desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink-60);
+      margin: 0;
+      font-family: 'PerpetualMTPro', Georgia, serif;
+    }
+
+    .footer__badges {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer__badge-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--ink-60);
+    }
+
+    .footer__badge-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .footer__links-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer__col-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       flex-direction: column;
       gap: 14px;
-      list-style: none;
     }
 
-    .footer__links a {
-      font-size: 13px;
+    .footer__col-list a {
+      font-size: 15px;
+      color: var(--ink-60);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer__col-list a:hover {
+      color: var(--ink);
+    }
+
+    .footer__contact-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 200px;
+    }
+
+    .footer__section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink-30);
+    }
+
+    .footer__contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer__contact-info a {
+      font-size: 14px;
       color: var(--ink-60);
       text-decoration: none;
     }
 
-    .footer__newsletter {
+    .footer__socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .footer__socials a {
+      font-size: 18px;
+      color: var(--ink-60);
+      transition: color 0.2s;
+    }
+
+    .footer__socials a:hover {
+      color: var(--ink);
+    }
+
+    .footer__newsletter-col {
+      width: 320px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      width: 320px;
     }
 
-    .footer__newsletter-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--ink);
+    .footer__newsletter-desc {
+      font-size: 14px;
+      color: var(--ink-60);
+      line-height: 1.5;
     }
 
     .footer__newsletter-row {
@@ -1075,53 +1337,101 @@
       height: 40px;
       padding: 0 16px;
       border: 1.5px solid var(--ink-30);
-      border-radius: 8px;
+      border-radius: 12px;
       font-size: 13px;
       outline: none;
-      background: var(--bg);
+      background: #FFFFFF;
       color: var(--ink);
-    }
-
-    .footer__newsletter-input::placeholder {
-      color: var(--ink-30);
     }
 
     .footer__newsletter-btn {
       height: 40px;
-      padding: 0 16px;
-      border-radius: 8px;
+      padding: 0 18px;
+      border-radius: 12px;
       font-size: 13px;
       font-weight: 600;
       background: var(--ink);
       color: #FFFFFF;
       border: none;
       cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .footer__newsletter-btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer__divider {
+      height: 1px;
+      background: var(--ink-10);
+      width: 100%;
+      margin: 40px 0 24px;
+    }
+
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer__logo-container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer__copy {
+      font-size: 13px;
+      color: var(--ink-60);
+    }
+
+    .footer__legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer__legal a {
+      font-size: 13px;
+      color: var(--ink-60);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer__legal a:hover {
+      color: var(--ink);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ══ NAV ══════════════════════════════════════════════ -->
-  <nav class="nav">
-    <a href="#" class="nav__logo"><img src="logo.png" alt="Goleme Logo" class="logo-img" /></a>
-    <ul class="nav__links">
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Pricing</a></li>
-      <li><a href="#">Examples</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
-    <div style="display:flex;gap:12px;align-items:center;">
-      <a href="#" class="btn btn--outline">Log in</a>
-      <a href="#" class="btn btn--filled" style="color:var(--ink);">Get started free</a>
-    </div>
-  </nav>
-
-  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <!-- ══ HERO & NAV WRAPPER ════════════════════════════════ -->
   <section class="hero-section">
+
+    <!-- ══ NAV ══════════════════════════════════════════════ -->
+    <nav class="nav">
+      <a href="#" class="nav__logo"><img src="logo.png" alt="Goleme Logo" class="logo-img" /></a>
+      <ul class="nav__links">
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Examples</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <a href="#" class="nav__icon-btn" title="Language"><i class="fa-regular fa-globe"></i></a>
+        <a href="#" class="nav__icon-btn" title="Dark Mode"><i class="fa-regular fa-moon"></i></a>
+        <a href="#" class="btn btn--outline" style="margin-left: 4px;">Log in</a>
+        <a href="#" class="btn btn--filled" style="color:var(--ink);">Get started free</a>
+      </div>
+    </nav>
+
+    <!-- ══ HERO ══════════════════════════════════════════════ -->
     <div class="hero">
       <div class="hero__left">
-        <h1 class="hero__title">Your salon,<br /><em>online</em> in<br />minutes.</h1>
+        <h1 class="hero__title">Your salon,<br />online in<br />minutes.</h1>
         <p class="hero__subtitle">
           Goleme builds a beautiful, bookable website for your barbershop or hair salon — no code, no designers, no
           stress.
@@ -1133,6 +1443,10 @@
         </div>
       </div>
       <div class="hero__right">
+        <!-- Hair clips holding the grid corners -->
+        <img src="hair-clip.png" alt="Hair clip decor" class="grid-clip grid-clip--top-left" />
+        <img src="hair-clip.png" alt="Hair clip decor" class="grid-clip grid-clip--bottom-right" />
+
         <!-- Floating icons scattered across the grid -->
         <i class="fa-light fa-scissors chat-icon icon-1"></i>
         <i class="fa-regular fa-spray-can chat-icon icon-2"></i>
@@ -1168,82 +1482,83 @@
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ══ LOGOS STRIP ════════════════════════════════════════ -->
-  <div class="logos">
-    <span class="logos__label">Trusted by salons across Europe</span>
-    <div class="logos__items">
-      <span class="logos__item">Barber&amp;Co</span>
-      <span class="logos__item">HairStudio</span>
-      <span class="logos__item">CutCraft</span>
-      <span class="logos__item">La Maison</span>
-      <span class="logos__item">Klíp Studio</span>
-    </div>
-  </div>
-
-
-  <!-- ══ FEATURES SECTION ═══════════════════════════════════ -->
-  <div class="features-section-wrapper">
-    <section class="features-section">
-      <div class="features-menu">
-        <div class="features-menu__item features-menu__item--active">
-          <div class="features-menu__icon">✦</div>
-          <span class="features-menu__label">Website Builder</span>
-        </div>
-        <div class="features-menu__item">
-          <div class="features-menu__icon">📅</div>
-          <span class="features-menu__label">Online Bookings</span>
-        </div>
-        <div class="features-menu__item">
-          <div class="features-menu__icon">💬</div>
-          <span class="features-menu__label">Client Reminders</span>
-        </div>
-        <div class="features-menu__item">
-          <div class="features-menu__icon">🎨</div>
-          <span class="features-menu__label">Goleme AI tips</span>
-        </div>
+    <!-- ══ LOGOS STRIP ════════════════════════════════════════ -->
+    <div class="logos">
+      <span class="logos__label">Trusted by salons across Europe</span>
+      <div class="logos__items">
+        <span class="logos__item">Barber&amp;Co</span>
+        <span class="logos__item">HairStudio</span>
+        <span class="logos__item">CutCraft</span>
+        <span class="logos__item">La Maison</span>
+        <span class="logos__item">Klíp Studio</span>
       </div>
+    </div>
 
-      <!-- Curved SVG divider — mirrors the reference design -->
-      <svg class="features-curve" viewBox="0 0 80 700" fill="none" xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none">
-        <path d="M40,0 C40,140 10,280 10,350 C10,420 40,560 40,700" stroke="#1D1C1B" stroke-width="1.5"
-          stroke-opacity="0.18" />
-        <path d="M46,0 C46,140 16,280 16,350 C16,420 46,560 46,700" stroke="#1D1C1B" stroke-width="0.8"
-          stroke-opacity="0.08" />
-        <circle cx="10" cy="210" r="8" fill="#1D1C1B" />
-      </svg>
 
-      <div class="features-content">
-        <div class="features-content__card">
-          <div class="features-content__card-title">Website Builder</div>
-          <div class="features-content__card-items">
-            <div class="features-content__card-item">
-              <div class="features-content__card-check">✓</div>
-              <div class="features-content__card-text" style="width:220px;"></div>
-            </div>
-            <div class="features-content__card-item">
-              <div class="features-content__card-check">✓</div>
-              <div class="features-content__card-text" style="width:180px;"></div>
-            </div>
-            <div class="features-content__card-item">
-              <div class="features-content__card-check">✓</div>
-              <div class="features-content__card-text" style="width:200px;"></div>
-            </div>
+    <!-- ══ FEATURES SECTION ═══════════════════════════════════ -->
+    <div class="features-section-wrapper">
+      <section class="features-section">
+        <div class="features-menu">
+          <div class="features-menu__item features-menu__item--active">
+            <div class="features-menu__icon">📅</div>
+            <span class="features-menu__label">Online rezervace pro vaše klienty</span>
+          </div>
+          <div class="features-menu__item">
+            <div class="features-menu__icon">✨</div>
+            <span class="features-menu__label">Ukažte svou práci</span>
+          </div>
+          <div class="features-menu__item">
+            <div class="features-menu__icon">⚡</div>
+            <span class="features-menu__label">Upravujte web kdykoliv, zdarma</span>
+          </div>
+          <div class="features-menu__item">
+            <div class="features-menu__icon">📋</div>
+            <span class="features-menu__label">Přehledný ceník služeb</span>
           </div>
         </div>
-        <h3 class="features-content__title">Website builder designed to book more clients and grow your business</h3>
-        <p class="features-content__desc">
-          Pick a template made for barbers and kadernice. Add your services, opening hours — Goleme does the rest.
-        </p>
-        <a href="#" class="features-content__cta">
-          Start building your site
-          <div class="features-content__cta-arrow">↗</div>
-        </a>
-      </div>
-    </section>
-  </div>
+
+        <!-- Curved SVG divider — mirrors the reference design -->
+        <svg class="features-curve" viewBox="0 0 80 700" fill="none" xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none">
+          <path d="M40,0 C40,140 10,280 10,350 C10,420 40,560 40,700" stroke="#1D1C1B" stroke-width="1.5"
+            stroke-opacity="0.18" />
+          <path d="M46,0 C46,140 16,280 16,350 C16,420 46,560 46,700" stroke="#1D1C1B" stroke-width="0.8"
+            stroke-opacity="0.08" />
+          <!-- dot starts at first item center -->
+          <circle id="features-dot" cx="26" cy="185" r="8" fill="#1D1C1B" />
+        </svg>
+
+        <div class="features-content">
+          <div class="features-content__card">
+            <div class="features-content__card-title">Online Rezervace</div>
+            <div class="features-content__card-items">
+              <div class="features-content__card-item">
+                <div class="features-content__card-check">✓</div>
+                <div class="features-content__card-text" style="width:220px;"></div>
+              </div>
+              <div class="features-content__card-item">
+                <div class="features-content__card-check">✓</div>
+                <div class="features-content__card-text" style="width:180px;"></div>
+              </div>
+              <div class="features-content__card-item">
+                <div class="features-content__card-check">✓</div>
+                <div class="features-content__card-text" style="width:200px;"></div>
+              </div>
+            </div>
+          </div>
+          <h3 class="features-content__title">Online rezervace navržené pro růst vašeho salonu</h3>
+          <p class="features-content__desc">
+            Vaši klienti se mohou snadno objednat online 24/7. Goleme posílá automatická potvrzení a připomínky, čímž minimalizuje storno termíny.
+          </p>
+          <a href="#" class="features-content__cta">
+            Začněte tvořit web
+            <div class="features-content__cta-arrow">↗</div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </section>
 
   <!-- ══ SHOWCASE ═══════════════════════════════════════════ -->
   <section class="showcase">
@@ -1468,55 +1783,122 @@
     </div>
   </section>
 
+  <!-- ══ TRANSITION CTA ════════════════════════════════════ -->
+  <section class="transition-cta">
+    <div class="transition-cta__content">
+      <p class="transition-cta__quote">„Nejlepší čas začít byl včera.“</p>
+      <h2 class="transition-cta__heading">
+        <span class="transition-cta__lead">Ten další je</span>
+        <span class="transition-cta__accent">dnes</span>
+      </h2>
+    </div>
+  </section>
+
   <!-- ══ TESTIMONIALS ═══════════════════════════════════════ -->
   <section class="testimonials">
     <div class="testimonials__grid">
       <!-- Card 1 -->
       <div class="tcard">
-        <p class="tcard__quote">"Goleme understood exactly what a kadernictví needs. The templates look professional and clients always compliment the site."</p>
-        <div class="tcard__name">Lucie Novotná</div>
+        <p class="tcard__quote">"Goleme understood exactly what a kadernictví needs. The templates look professional."
+        </p>
+        <div class="tcard__footer">
+          <div class="tcard__author-info">
+            <div class="tcard__name">@lucie_novotna</div>
+            <div class="tcard__role">Hair Stylist · Brno</div>
+          </div>
+          <div class="tcard__avatar" style="background: #FFE17D;">LN</div>
+        </div>
       </div>
 
       <!-- Card 2 -->
       <div class="tcard">
-        <p class="tcard__quote">"I set up my barbershop website in one afternoon. Now my clients book online and I spend less time answering calls while working."</p>
-        <div class="tcard__name">Tomáš Kovář</div>
+        <p class="tcard__quote">"I set up my barbershop website in one afternoon. Now my clients book online and I spend
+          less time answering calls while working. It works on auto-pilot."</p>
+        <div class="tcard__footer">
+          <div class="tcard__author-info">
+            <div class="tcard__name">@tomas_kovar</div>
+            <div class="tcard__role">Master Barber · Prague</div>
+          </div>
+          <div class="tcard__avatar" style="background: #D2DCFF;">TK</div>
+        </div>
       </div>
 
       <!-- Card 3 -->
       <div class="tcard">
-        <p class="tcard__quote">"We moved all 4 of our salon locations to Goleme. The automated reminders reduced our no-show rate to zero, and the booking system is dead simple for customers to use on their phones."</p>
-        <div class="tcard__name">Adam Marek</div>
+        <p class="tcard__quote">"We moved all 4 of our salon locations to Goleme. The automated reminders reduced our
+          no-show rate to zero, and the booking system is dead simple for customers to use on their phones. We saw an
+          immediate jump in customer retention and bookings."</p>
+        <div class="tcard__footer">
+          <div class="tcard__author-info">
+            <div class="tcard__name">@adam_marek</div>
+            <div class="tcard__role">Salon Owner · Plzeň</div>
+          </div>
+          <div class="tcard__avatar" style="background: #D4F2E7;">AM</div>
+        </div>
       </div>
 
       <!-- Card 4 -->
       <div class="tcard">
-        <p class="tcard__quote">"Honestly a game changer. The AI generated a gorgeous page that fits our beauty studio brand perfectly. Very easy to update our services and pricing."</p>
-        <div class="tcard__name">Elena Růžičková</div>
+        <p class="tcard__quote">"Honestly a game changer. The AI generated a gorgeous page that fits our beauty studio
+          brand perfectly."</p>
+        <div class="tcard__footer">
+          <div class="tcard__author-info">
+            <div class="tcard__name">@elena_ruzickova</div>
+            <div class="tcard__role">Studio Director · Prague</div>
+          </div>
+          <div class="tcard__avatar" style="background: #FFD2E5;">ER</div>
+        </div>
       </div>
 
       <!-- Card 5 -->
       <div class="tcard">
-        <p class="tcard__quote">"Highly recommend. Increased our online bookings by 40% in just two weeks of launching."</p>
-        <div class="tcard__name">David Svoboda</div>
+        <p class="tcard__quote">"Highly recommend. Increased bookings by 40%!"</p>
+        <div class="tcard__footer">
+          <div class="tcard__author-info">
+            <div class="tcard__name">@david_svoboda</div>
+            <div class="tcard__role">Barber Lead · Liberec</div>
+          </div>
+          <div class="tcard__avatar" style="background: #CCEFFF;">DS</div>
+        </div>
       </div>
 
       <!-- Card 6 -->
       <div class="tcard">
-        <p class="tcard__quote">"As a mobile makeup artist, I needed something quick and elegant. Goleme let me build a bookings portal that clients compliantly pay deposit fees through before booking a slot. Perfect."</p>
-        <div class="tcard__name">Marie Blahová</div>
+        <p class="tcard__quote">"As a mobile makeup artist, Goleme let me build a bookings portal that clients
+          compliantly pay deposit fees through before booking a slot. Perfect for avoiding last minute cancellations,
+          and it looks beautiful. It handles my whole calendar."</p>
+        <div class="tcard__footer">
+          <div class="tcard__author-info">
+            <div class="tcard__name">@marie_blahova</div>
+            <div class="tcard__role">Visage Artist · Bratislava</div>
+          </div>
+          <div class="tcard__avatar" style="background: #FFE3D1;">MB</div>
+        </div>
       </div>
 
       <!-- Card 7 -->
       <div class="tcard">
-        <p class="tcard__quote">"No-brainer tool. The automated SMS reminders pay for the service itself because clients don't forget their appointments anymore."</p>
-        <div class="tcard__name">Oliver Jánský</div>
+        <p class="tcard__quote">"No-brainer tool. The automated SMS reminders pay for the service itself because clients
+          don't forget their appointments anymore."</p>
+        <div class="tcard__footer">
+          <div class="tcard__author-info">
+            <div class="tcard__name">@oliver_jansky</div>
+            <div class="tcard__role">Hair Salon Partner · Prague</div>
+          </div>
+          <div class="tcard__avatar" style="background: #E6E6E6;">OJ</div>
+        </div>
       </div>
 
       <!-- Card 8 -->
       <div class="tcard">
         <p class="tcard__quote">"I created my portfolio and bookings page in 10 minutes. Love the sleek templates!"</p>
-        <div class="tcard__name">Anna Poláková</div>
+        <div class="tcard__footer">
+          <div class="tcard__author-info">
+            <div class="tcard__name">@anna_polakova</div>
+            <div class="tcard__role">Nail Artist · Ostrava</div>
+          </div>
+          <div class="tcard__avatar" style="background: #FFB800;">AP</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1525,24 +1907,65 @@
 
   <!-- ══ FOOTER ═════════════════════════════════════════════ -->
   <footer class="footer">
-    <div class="footer__left">
-      <a href="#" class="footer__logo"><img src="logo.png" alt="Goleme Logo" class="logo-img" /></a>
-      <span class="footer__copy">© 2026 Goleme s.r.o.</span>
+    <div class="footer__huge-text">Goleme</div>
+    <div class="footer__top">
+      <!-- Left Side: Brand description and web badges -->
+      <div class="footer__brand-col">
+        <p class="footer__desc">
+          Goleme builds beautiful, bookable websites for your hair salon or barbershop on autopilot — no coding required.
+        </p>
+        <div class="footer__badges">
+          <span class="footer__badge-label">Available on Web</span>
+          <div class="footer__badge-icon"><i class="fa-regular fa-globe"></i> Chrome, Safari &amp; Firefox</div>
+        </div>
+      </div>
+
+      <!-- Links Column -->
+      <div class="footer__links-col">
+        <ul class="footer__col-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social Column -->
+      <div class="footer__contact-col">
+        <span class="footer__section-title">Get in touch</span>
+        <div class="footer__contact-info" style="margin-top: 8px;">
+          <a href="mailto:team@goleme.cz">team@goleme.cz</a>
+          <a href="tel:+420777123456">+420 777 123 456</a>
+        </div>
+        <span class="footer__section-title" style="margin-top: 20px;">Follow us</span>
+        <div class="footer__socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Newsletter Column (keep bottom right / right side) -->
+      <div class="footer__newsletter-col">
+        <span class="footer__section-title">Newsletter</span>
+        <p class="footer__newsletter-desc" style="margin: 4px 0 0;">Subscribe to get the latest templates &amp; product updates.</p>
+        <div class="footer__newsletter-row" style="margin-top: 8px;">
+          <input class="footer__newsletter-input" type="email" placeholder="your@email.com" />
+          <button class="footer__newsletter-btn">Subscribe</button>
+        </div>
+      </div>
     </div>
 
-    <ul class="footer__links">
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Pricing</a></li>
-      <li><a href="#">Privacy</a></li>
-      <li><a href="#">Terms</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <div class="footer__divider"></div>
 
-    <div class="footer__newsletter">
-      <span class="footer__newsletter-label">Newsletter</span>
-      <div class="footer__newsletter-row">
-        <input class="footer__newsletter-input" type="email" placeholder="your@email.com" />
-        <button class="footer__newsletter-btn">Subscribe</button>
+    <div class="footer__bottom">
+      <div></div>
+      <div class="footer__bottom-right" style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+        <span class="footer__copy">© 2026 Goleme s.r.o. All Rights Reserved.</span>
+        <div class="footer__legal">
+          <a href="#">Terms &amp; conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
       </div>
     </div>
   </footer>
